@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Week-1 Assignment</title>
+    <style type="text/css">
+        body {
+            font-size: 20px;
+        }
+
+        .head {
+            text-align: center;
+            height: 300px;
+            font-size: 40px;
+            font-weight: bold;
+            background-color: rgb(213, 235, 248);
+            line-height: 300px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .topnav_r {
+            float: right;
+        }
+
+        .topnav_r a {
+            padding-left: 20px;
+        }
+
+        .hamburger {
+            float: right;
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0px;
+        }
+
+        li {
+            display: inline-block;
+            background-color: rgb(255, 255, 255);
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        .box {
+            flex: none;
+            width: 270px;
+            height: 250px;
+            margin: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            background-color: rgb(180, 224, 238);
+            height: 55px;
+        }
+
+        .box img {
+            width: 270px;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media screen and (min-width:1200px) {
+            main {
+                display: flex;
+                flex-wrap: wrap;
+                width: 1200px;
+                margin: auto;
+                justify-content: center;
+            }
+
+            .box {
+                width: 22.5%;
+                object-fit: cover;
+            }
+        }
+
+        @media screen and (max-width:1200px) {
+            .box {
+                width: 45%;
+            }
+
+            .box img {
+                width: 100%
+            }
+
+            .title {
+                width: auto;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .topnav_r {
+                display: none;
+            }
+
+            .box {
+                width: 90%;
+            }
+
+            .hamburger {
+                width: 25px;
+                float: right;
+                display: block;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        let clist_name = [];
+        let clist_img = [];
+        function fetchdata() {
+            let src = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json";
+            fetch(src)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (result) {
+                    let x = result.result.results;
+                    let landmark = "";
+                    for (let i in x) {
+                        let landmark = x[i].stitle;
+                        clist_name.push(landmark);
+                    }
+                    for (let i in x) {
+                        let landmark = "https" + x[i].file.split("https")[1];
+                        clist_img.push(landmark);
+                    }
+                    console.log(clist_name[0]);
+                    console.log(clist_img[0]);
+                });
+        }
+
+        function pic() {
+            for (var i = 0; i < 8; i++) {
+                var img = document.createElement("IMG");
+                var div = document.createElement("div");
+                var text = document.createTextNode(clist_name[i]);
+                img.src = clist_img[i];
+                div.appendChild(text);
+                div.className = "title";
+                document.getElementById("p" + i).appendChild(img);
+                document.getElementById("div" + i).appendChild(div);
+            }
+        }
+
+        window.onload = fetchdata;
+        window.setTimeout(pic, 200);
+    </script>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div style="float: left;">My Website</div>
+        <div class="hamburger"><img src="hamburger.png" width="25px"></div>
+        <div class="topnav_r">
+            <ul>
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+                <li><a>Item 3</a></li>
+                <li><a>Item 4</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="head">Welcome to MyHome</div>
+    <main>
+        <div id="div0" class="box">
+            <div id='p0'></div>
+        </div>
+        <div id="div1" class="box">
+            <div id='p1'></div>
+        </div>
+        <div id="div2" class="box">
+            <div id='p2'></div>
+        </div>
+        <div id="div3" class="box">
+            <div id='p3'></div>
+        </div>
+        <div id="div4" class="box">
+            <div id='p4'></div>
+        </div>
+        <div id="div5" class="box">
+            <div id='p5'></div>
+        </div>
+        <div id="div6" class="box">
+            <div id='p6'></div>
+        </div>
+        <div id="div7" class="box">
+            <div id='p7'></div>
+        </div>
+    </main>
+
+</body>
+
+</html>
