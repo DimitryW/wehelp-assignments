@@ -57,20 +57,37 @@
         .box {
             flex: none;
             width: 270px;
-            height: 230px;
+            height: 200px;
             margin: 10px;
             text-align: center;
             margin-bottom: 80px;
         }
 
         .title {
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+        [id^="div"] {
             background-color: rgb(180, 224, 238);
+            width: 100%;
             height: 55px;
         }
 
+        [id^="div"]::before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+        }
+
+
         .box img {
             width: 270px;
-            height: 230px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
@@ -99,9 +116,6 @@
                 width: 100%
             }
 
-            .title {
-                width: auto;
-            }
         }
 
         @media screen and (max-width:600px) {
@@ -124,7 +138,8 @@
         let clist_name = [];
         let clist_img = [];
         function fetchdata() {
-            fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json")
+            let src = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json";
+            fetch(src)
                 .then(function (response) {
                     return response.json();
                 })
@@ -139,6 +154,8 @@
                         let landmark = "https" + x[i].file.split("https")[1];
                         clist_img.push(landmark);
                     }
+                    console.log(clist_name[0]);
+                    console.log(clist_img[0]);
                 });
         }
 
@@ -156,7 +173,7 @@
         }
 
         window.onload = fetchdata;
-        window.setTimeout(pic, 500);
+        window.setTimeout(pic, 300);
     </script>
 
 </head>
@@ -178,29 +195,37 @@
 
     <div class="head">Welcome to MyHome</div>
     <main>
-        <div id="div0" class="box">
+        <div class="box">
             <div id='p0'></div>
+            <div id="div0"></div>
         </div>
-        <div id="div1" class="box">
+        <div class="box">
             <div id='p1'></div>
+            <div id="div1"></div>
         </div>
-        <div id="div2" class="box">
+        <div class="box">
             <div id='p2'></div>
+            <div id="div2"></div>
         </div>
-        <div id="div3" class="box">
+        <div class="box">
             <div id='p3'></div>
+            <div id="div3"></div>
         </div>
-        <div id="div4" class="box">
+        <div class="box">
             <div id='p4'></div>
+            <div id="div4"></div>
         </div>
-        <div id="div5" class="box">
+        <div class="box">
             <div id='p5'></div>
+            <div id="div5"></div>
         </div>
-        <div id="div6" class="box">
+        <div class="box">
             <div id='p6'></div>
+            <div id="div6"></div>
         </div>
-        <div id="div7" class="box">
+        <div class="box">
             <div id='p7'></div>
+            <div id="div7"></div>
         </div>
     </main>
 
