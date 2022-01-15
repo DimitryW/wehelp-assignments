@@ -25,6 +25,7 @@ print(type(j))  # <class 'dict'>
 
 # 建立CSV檔案
 import csv
+result=j["result"]["results"]
 with open("data.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["景點名稱","區域", "經度", "緯度", "第一張圖檔網址"])
