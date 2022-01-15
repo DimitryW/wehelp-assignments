@@ -135,8 +135,8 @@
         }
     </style>
     <script type="text/javascript">
-        let clist_name = [];
-        let clist_img = [];
+        let list_name = [];
+        let list_img = [];
         function fetchdata() {
             let src = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json";
             fetch(src)
@@ -148,11 +148,11 @@
                     let landmark = "";
                     for (let i in x) {
                         let landmark = x[i].stitle;
-                        clist_name.push(landmark);
+                        list_name.push(landmark);
                     }
                     for (let i in x) {
                         let landmark = "https" + x[i].file.split("https")[1];
-                        clist_img.push(landmark);
+                        list_img.push(landmark);
                     }
                 });
         }
@@ -161,8 +161,8 @@
             for (let i = 0; i < 8; i++) {
                 let img = document.createElement("IMG");
                 let div = document.createElement("div");
-                let text = document.createTextNode(clist_name[i]);
-                img.src = clist_img[i];
+                let text = document.createTextNode(list_name[i]);
+                img.src = list_img[i];
                 div.appendChild(text);
                 div.className = "title";
                 document.getElementById("p" + i).appendChild(img);
