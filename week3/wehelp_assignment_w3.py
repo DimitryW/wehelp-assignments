@@ -18,7 +18,6 @@ print(type(j))  # <class 'dict'>
 # print(result[12]['longitude'])
 # print(result[12]['latitude'])
 # a=result[12]['file'].lower().find("jpg")
-# print(a)
 # print(result[12]['file'][0:a+3])
 # l=[result[12]['stitle'],result[12]['address'][5:8],result[12]['longitude'],result[12]['latitude'],result[12]['file'][0:a+3]]
 # print(l)
