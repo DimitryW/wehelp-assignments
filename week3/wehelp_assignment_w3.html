@@ -158,10 +158,10 @@
         }
 
         function pic() {
-            for (var i = 0; i < 8; i++) {
-                var img = document.createElement("IMG");
-                var div = document.createElement("div");
-                var text = document.createTextNode(list_name[i]);
+            for (let i = 0; i < 8; i++) {
+                let img = document.createElement("IMG");
+                let div = document.createElement("div");
+                let text = document.createTextNode(list_name[i]);
                 img.src = list_img[i];
                 div.appendChild(text);
                 div.className = "title";
