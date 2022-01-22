@@ -16,10 +16,10 @@ def index():
 def signin():
     name = request.form["username"]
     password = request.form["password"]
-    # 將登入資料紀錄在session中
-    session["username"] = name
-    session['password'] = password
     if name=="test" and password=="test":
+        # 將登入資料紀錄在session中
+        session["username"] = name
+        session["password"] = password
         return redirect("/member/")
     elif name=="" or password=="":
         return  redirect(url_for("error", message="請輸入帳號、密碼")) # 利用 url_for 導到對應函式的路由，同時加上 query string
