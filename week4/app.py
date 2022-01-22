@@ -8,9 +8,7 @@ app.secret_key = "avada kedavra"
 # homepage
 @app.route("/")
 def index():
-    if session.get("username")=="test" and session.get('password')=="test":  
-    # session["username"]如果不存在會報錯
-    # 改用session.get('username')，如果不存在會報 "None"
+    if "username" in session:
         return redirect("/member/")
     return render_template("home.html")
 
@@ -30,7 +28,7 @@ def signin():
 
 @app.route("/member/")
 def member():
-    if session.get("username")=="test" and session.get('password')=="test": 
+    if "username" in session: 
         return render_template("member.html")
     return redirect("/") 
 
