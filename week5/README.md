@@ -16,9 +16,7 @@ VALUES ('Curtis', 'Curtis', 'uhbijnokm', 60);
 INSERT INTO member (name, username, password, follower_count) 
 VALUES ('Simon', 'Simon', 's1m0n', 33);
 
-3-2.
-SELECT * FROM member;
+3-2. & 3-3.
+![3-2~3](https://user-images.githubusercontent.com/63653055/151363180-42ef7c11-6fe9-4ad6-a852-c043379ab039.png)
 
-3-3.
-SELECT * FROM member ORDER BY time DESC;
-![3-2~3](https://user-images.githubusercontent.com/63653055/151363049-90436bfb-8606-4ecd-b80a-8b9c1b86eec0.png)
+3-4.![3-4](https://user-images.githubusercontent.com/63653055/151363682-fb590791-4516-4355-b79f-cb8c11f0bea5.png)
