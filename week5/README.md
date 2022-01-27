@@ -1,4 +1,5 @@
 3-1.
+
 INSERT INTO member (name, username, password) 
 VALUES ('test', 'test', 'test');
 
@@ -23,3 +24,49 @@ VALUES ('Simon', 'Simon', 's1m0n', 33);
 3-4.
 
 ![3-4](https://user-images.githubusercontent.com/63653055/151363682-fb590791-4516-4355-b79f-cb8c11f0bea5.png)
+
+3-5.
+
+![3-5](https://user-images.githubusercontent.com/63653055/151364386-a5190d37-57a9-4558-b7a0-2e9d541b9cf5.png)
+
+3-6.
+
+![3-6](https://user-images.githubusercontent.com/63653055/151364404-e8b64643-4bed-4dd9-9b63-8c2feb75f699.jpg)
+
+3-7.
+
+![3-7](https://user-images.githubusercontent.com/63653055/151364428-cdf3a779-5541-4e56-bcec-7733cd6e588c.jpg)
+
+4-1.
+
+![4-1](https://user-images.githubusercontent.com/63653055/151364523-d56abf86-fa64-4be6-a7ce-95c76093a8e8.jpg)
+
+4-2.
+
+![4-2](https://user-images.githubusercontent.com/63653055/151364556-7c4d749d-1b45-456e-893f-1c3063968a73.jpg)
+
+4-3.
+
+![4-3](https://user-images.githubusercontent.com/63653055/151364568-a81b0076-ec69-4d56-8463-991ab6742979.jpg)
+
+
+5-1.
+
+CREATE TABLE message
+(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+member_id BIGINT NOT NULL,
+content VARCHAR(255) NOT NULL,
+time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY(member_id) REFERENCES member(id)
+);
+
+5-2.
+
+![5-2](https://user-images.githubusercontent.com/63653055/151364825-88ca672f-2638-4bd0-91c5-7b6fdd94d122.jpg)
+
+5-3.
+
+![5-3](https://user-images.githubusercontent.com/63653055/151364842-68f4f5fd-890c-405e-9b8a-da8acc1262cd.jpg)
+
+
