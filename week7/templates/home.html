@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>登入首頁</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        .head {
+            text-align: center;
+            line-height: 150px;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(20, 37, 41);
+            margin-bottom: 30px;
+            width: auto;
+            height: 150px;
+        }
+
+        .form {
+            padding: 5px;
+            text-align: center;
+        }
+
+        #button {
+            padding-bottom: 30px;
+        }
+    </style>
+    <script type="text/javascript"></script>
+</header>
+
+<body>
+    <div class="head">歡迎光臨，請註冊登入系統</div>
+    <h3>註冊帳號</h3>
+    <div>
+        <form action="/signup" method="POST">
+            <div class="form"><span class="form">姓名</span><input type="text" name="name" /></div>
+            <div class="form"><span class="form">帳號</span><input type="text" name="username" /></div>
+            <div class="form"><span class="form">密碼</span><input type="password" name="password" /></div>
+            <!--用 type="password" 來隱藏密碼-->
+            <div id="button"><button>註冊</button></div>
+        </form>
+    </div>
+    <hr>
+    <h3>登入系統</h3>
+    <div>
+        <form action="/signin" method="POST">
+            <div class="form"><span class="form">帳號</span><input type="text" name="username" /></div>
+            <div class="form"><span class="form">密碼</span><input type="password" name="password" /></div>
+            <!--用 type="password" 來隱藏密碼-->
+            <div id="button"><button>登入</button></div>
+        </form>
+    </div>
+</body>
+
+</html>
