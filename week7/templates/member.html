@@ -46,14 +46,14 @@
                     return response.json();
                 })
                 .then(function (result) {
-                    console.log(result);
-                    let name = result.data.name;
-                    let username = result.data.username;
-                    let div = document.createElement("div");
-                    let text = document.createTextNode(name + "(" + username + ")");
-                    div.id = "memberName"
-                    div.appendChild(text);
-                    document.getElementById("memberInfo").appendChild(div);
+                    if (result.data) {
+                        let name = result.data.name;
+                        let username = result.data.username;
+                        document.getElementById("memberName").innerHTML = name + "(" + username + ")";
+                    } else{
+                        document.getElementById("memberName").innerHTML = "查無此會員";
+                    }
+
                 })
         }
     </script>
@@ -67,6 +67,7 @@
         <div class="title">查詢會員姓名</div>
         <input type="text" name="username" id="username" />
         <button class="search" onclick="fetchdata();">查詢</button>
+        <div id="memberName"></div>
 
     </div>
 </body>
