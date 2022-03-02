@@ -2,6 +2,9 @@ from flask import Flask, request, render_template, redirect, url_for, jsonify
 from flask import session  # 記得設定 app.secret_key
 import mysql.connector
 
+# jsonify() 功能是把字典或列表 => Response Object 包含 Response Body 設定為對應的字串 (JSON 格式)。
+# json 套件中的 json.loads() 是把字串 (JSON 格式) => 字典或列表，相對的 json.dumps() 是把字典或列表 => 字串 (JSON 格式)
+
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
